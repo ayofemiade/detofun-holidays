@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion, Variants } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
@@ -13,7 +13,7 @@ const SAND = "#F5E9DA";
 const DARK = "#2C1A0B";
 
 // ─── Motion variants (tightened delays for fast perceived load) ──────────────
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: (delay: number = 0) => ({
     opacity: 1,
@@ -22,7 +22,7 @@ const fadeUp = {
   }),
 };
 
-const wordVariants = {
+const wordVariants: Variants = {
   hidden: { opacity: 0, y: 22 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
