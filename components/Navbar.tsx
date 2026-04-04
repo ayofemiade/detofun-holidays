@@ -37,6 +37,7 @@ export default function Navbar() {
                             src="/logo.png"
                             alt="Detofun Holidays Logo"
                             fill
+                            sizes="64px"
                             className="object-contain"
                             priority
                         />

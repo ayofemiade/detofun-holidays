@@ -1,4 +1,5 @@
 import HeroSection from "@/sections/HeroSection";
+import MarqueeTicker from "@/sections/MarqueeTicker";
 import WhyChooseUs from "@/sections/WhyChooseUs";
 import FeaturedDestination from "@/sections/FeaturedDestination";
 import DestinationsGrid from "@/sections/DestinationsGrid";
@@ -15,6 +16,7 @@ export default function Home() {
     <main className="flex flex-col w-full bg-black relative selection:bg-[var(--color-accent)] selection:text-black">
       <Navbar />
       <HeroSection />
+      <MarqueeTicker />
       <WhyChooseUs />
       <FeaturedDestination />
       <DestinationsGrid />
