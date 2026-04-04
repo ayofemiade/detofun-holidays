@@ -13,19 +13,30 @@ const SAND = "#F5E9DA";
 const DARK = "#2C1A0B";
 
 // ─── Motion variants (tightened delays for fast perceived load) ──────────────
-const fadeUp: Variants = {
+const fadeUp = {
   hidden: { opacity: 0, y: 24 },
   visible: (delay: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.55, ease: "easeOut", delay },
+    transition: {
+      duration: 0.55,
+      ease: [0.25, 0.1, 0.25, 1],
+      delay,
+    },
   }),
-};
+} as Variants;
 
-const wordVariants: Variants = {
+const wordVariants = {
   hidden: { opacity: 0, y: 22 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
+  },
+} as Variants;
 
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
