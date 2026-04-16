@@ -118,7 +118,7 @@ function Subheading() {
       className="text-lg sm:text-xl md:text-2xl italic mb-8 sm:mb-10 max-w-[90%] sm:max-w-2xl leading-relaxed mx-auto"
       style={{ fontFamily: "var(--font-playfair, serif)", color: `${SAND}cc`, fontWeight: 400 }}
     >
-      Curated journeys across Abeokuta, Lagos and beyond&nbsp;&mdash;
+      Curated journeys across Abeokuta and beyond&nbsp;&mdash;
       <br className="hidden sm:block" /> crafted for the discerning traveler.
     </motion.p>
   );

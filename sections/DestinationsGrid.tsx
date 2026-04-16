@@ -188,7 +188,8 @@ export default function DestinationsGrid() {
             />
           </div>
 
-          <motion.button
+          <motion.a
+            href="#packages"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -196,7 +197,7 @@ export default function DestinationsGrid() {
             className="flex items-center gap-2 text-[#C8A96A] font-semibold hover:text-[#F5E9DA] transition-colors cursor-pointer shrink-0"
           >
             View All Experiences <ArrowUpRight className="w-5 h-5" />
-          </motion.button>
+          </motion.a>
         </div>
 
         {/*

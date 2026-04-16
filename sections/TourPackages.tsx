@@ -50,7 +50,7 @@ const packages = [
 
 export default function TourPackages() {
     return (
-        <section className="relative w-full py-32 px-4 bg-[#120B05] flex flex-col items-center">
+        <section id="packages" className="relative w-full py-32 px-4 bg-[#120B05] flex flex-col items-center">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)]/30 to-transparent" />
 
             <div className="max-w-7xl mx-auto w-full">
@@ -107,12 +107,12 @@ export default function TourPackages() {
                                 ))}
                             </ul>
 
-                            <button className={`mt-auto w-full py-4 rounded-full font-bold transition-all duration-300 ${pkg.popular
+                            <a href="#contact" className={`mt-auto w-full py-4 rounded-full font-bold transition-all duration-300 flex justify-center text-center ${pkg.popular
                                     ? "bg-[var(--color-accent)] text-black hover:bg-white"
                                     : "bg-white/10 text-white hover:bg-white hover:text-black"
                                 }`}>
                                 Book Now
-                            </button>
+                            </a>
                         </motion.div>
                     ))}
                 </div>

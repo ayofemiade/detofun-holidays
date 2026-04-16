@@ -5,8 +5,6 @@ const ITEMS = [
   "✦",
   "ABEOKUTA EXPERIENCE",
   "✦",
-  "LAGOS ADVENTURES",
-  "✦",
   "NIGERIA HIDDEN GEMS",
   "✦",
   "CURATED JOURNEYS",
