@@ -137,9 +137,9 @@ export default function BookingModal() {
                                             <option>Custom Package</option>
                                         </select>
                                     </div>
-                                    <div className="flex flex-col gap-1.5 min-w-0">
+                                    <div className="flex flex-col gap-1.5 w-full overflow-hidden">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Travel Date</label>
-                                        <input name="date" type="date" className="w-full max-w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm [color-scheme:dark]" />
+                                        <input name="date" type="date" className="block w-full max-w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm [color-scheme:dark]" />
                                     </div>
                                 </div>
                                 
