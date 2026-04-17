@@ -98,38 +98,38 @@ export default function BookingModal() {
 
                         {/* Right Side: Form */}
                         <div 
-                            className="w-full md:w-3/5 p-8 md:p-12 overflow-y-auto custom-scrollbar relative bg-[#120B05]/95"
+                            className="w-full md:w-3/5 p-6 sm:p-8 md:p-12 overflow-y-auto custom-scrollbar relative bg-[#120B05]/95"
                             data-lenis-prevent
                         >
-                            <h2 className="text-2xl font-heading text-white font-bold mb-8">
+                            <h2 className="text-xl sm:text-2xl font-heading text-white font-bold mb-6 sm:mb-8">
                                 Request a Reservation
                             </h2>
 
                             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div className="flex flex-col gap-1.5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Full Name</label>
-                                        <input name="name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="John Doe" />
+                                        <input name="name" type="text" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="John Doe" />
                                     </div>
-                                    <div className="flex flex-col gap-1.5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Email</label>
-                                        <input name="email" type="email" required className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="john@example.com" />
+                                        <input name="email" type="email" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="john@example.com" />
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div className="flex flex-col gap-1.5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Phone Number</label>
-                                        <input name="phone" type="tel" required className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="+1 234 567 8900" />
+                                        <input name="phone" type="tel" required className="w-full bg-white/5 border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="+1 234 567 8900" />
                                     </div>
-                                    <div className="flex flex-col gap-1.5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Guests</label>
-                                        <input name="guests" type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="2 Adults" />
+                                        <input name="guests" type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm" placeholder="2 Adults" />
                                     </div>
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div className="flex flex-col gap-1.5">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Destination</label>
-                                        <select name="destination" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm appearance-none">
+                                        <select name="destination" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm appearance-none">
                                             <option>Abeokuta Day Tour</option>
                                             <option>School Excursion</option>
                                             <option>Corporate Retreat</option>
@@ -137,9 +137,9 @@ export default function BookingModal() {
                                             <option>Custom Package</option>
                                         </select>
                                     </div>
-                                    <div className="flex flex-col gap-1.5">
+                                    <div className="flex flex-col gap-1.5 min-w-0">
                                         <label className="text-xs text-[var(--color-secondary)]/60 uppercase tracking-widest pl-1">Travel Date</label>
-                                        <input name="date" type="date" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-5 py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm [color-scheme:dark]" />
+                                        <input name="date" type="date" className="w-full max-w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-4 sm:px-5 py-3 sm:py-3.5 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors text-sm [color-scheme:dark]" />
                                     </div>
                                 </div>
                                 

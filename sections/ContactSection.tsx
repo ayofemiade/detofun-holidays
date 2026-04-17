@@ -60,30 +60,41 @@ export default function ContactSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="bg-black/50 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/10"
+                    className="bg-black/50 backdrop-blur-md p-6 sm:p-12 rounded-3xl border border-white/10"
                 >
-                    <form className="flex flex-col gap-6" onSubmit={(e: any) => {
+                    <form className="flex flex-col gap-5 sm:gap-6" onSubmit={(e: any) => {
                         e.preventDefault();
                         const formData = new FormData(e.target);
-                        const text = `Hello Detofun Holidays!%0A%0A*New General Inquiry:*%0A- *Name:* ${formData.get('name')}%0A- *Guests:* ${formData.get('guests')}%0A- *Destination:* ${formData.get('destination')}%0A- *Date:* ${formData.get('date')}%0A- *Special Requests:* ${formData.get('requests')}`;
+                        const text = `Hello Detofun Holidays!%0A%0A*New General Inquiry:*%0A- *Name:* ${formData.get('name')}%0A- *Email:* ${formData.get('email')}%0A- *Phone:* ${formData.get('phone')}%0A- *Guests:* ${formData.get('guests')}%0A- *Destination:* ${formData.get('destination')}%0A- *Date:* ${formData.get('date')}%0A- *Special Requests:* ${formData.get('requests')}`;
                         window.open(`https://wa.me/2348084586992?text=${text}`, '_blank');
                         e.target.reset();
                     }}>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div className="flex flex-col gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                            <div className="flex flex-col gap-2 min-w-0">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Name</label>
-                                <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John Doe" />
+                                <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John Doe" />
                             </div>
-                            <div className="flex flex-col gap-2">
-                                <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Guests</label>
-                                <input name="guests" type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="2" />
+                            <div className="flex flex-col gap-2 min-w-0">
+                                <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Email</label>
+                                <input name="email" required type="email" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="john@example.com" />
                             </div>
                         </div>
 
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div className="flex flex-col gap-2">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                            <div className="flex flex-col gap-2 min-w-0">
+                                <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Phone</label>
+                                <input name="phone" required type="tel" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="+234..." />
+                            </div>
+                            <div className="flex flex-col gap-2 min-w-0">
+                                <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Guests</label>
+                                <input name="guests" type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="2" />
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+                            <div className="flex flex-col gap-2 min-w-0">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Destination</label>
-                                <select name="destination" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none">
+                                <select name="destination" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none">
                                     <option>Abeokuta Tour</option>
                                     <option>School Excursion</option>
                                     <option>Corporate Retreat</option>
@@ -91,9 +102,9 @@ export default function ContactSection() {
                                     <option>Custom Package</option>
                                 </select>
                             </div>
-                            <div className="flex flex-col gap-2">
+                            <div className="flex flex-col gap-2 min-w-0">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Date</label>
-                                <input name="date" type="date" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors [color-scheme:dark]" />
+                                <input name="date" type="date" className="w-full max-w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-5 sm:px-6 py-3.5 sm:py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors [color-scheme:dark]" />
                             </div>
                         </div>
 
