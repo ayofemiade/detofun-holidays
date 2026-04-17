@@ -40,9 +40,9 @@ export default function FinalCTA() {
                 />
 
                 <div className="flex flex-col sm:flex-row items-center gap-6">
-                    <a href="#contact" className="inline-block px-10 py-5 bg-[var(--color-accent)] text-black font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(200,169,106,0.4)] text-center">
+                    <button onClick={() => window.dispatchEvent(new Event('openBookingModal'))} className="inline-block px-10 py-5 bg-[var(--color-accent)] text-black font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(200,169,106,0.4)] text-center">
                         Book a Tour
-                    </a>
+                    </button>
                     <a href="#packages" className="inline-block px-10 py-5 backdrop-blur-md bg-white/10 border border-white/30 text-white font-bold uppercase tracking-widest text-sm rounded-full hover:bg-white/20 transition-all duration-300 text-center">
                         Plan Your Trip
                     </a>

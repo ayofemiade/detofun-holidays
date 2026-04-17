@@ -47,13 +47,13 @@ export default function Navbar() {
                 <ul className="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest font-semibold text-white/80">
                     <li className="hover:text-[var(--color-accent)] cursor-pointer transition-colors"><a href="#destinations">Destinations</a></li>
                     <li className="hover:text-[var(--color-accent)] cursor-pointer transition-colors"><a href="#packages">Packages</a></li>
-                    <li className="hover:text-[var(--color-accent)] cursor-pointer transition-colors"><a href="#services">Services</a></li>
+                    <li className="hover:text-[var(--color-accent)] cursor-pointer transition-colors"><a href="#difference">Services</a></li>
                     <li className="hover:text-[var(--color-accent)] cursor-pointer transition-colors"><a href="#contact">Contact</a></li>
                 </ul>
 
-                <a href="#contact" className="px-6 py-2.5 bg-white text-black font-semibold uppercase tracking-widest text-xs rounded-full hover:bg-[var(--color-accent)] hover:scale-105 transition-all duration-300">
+                <button onClick={() => window.dispatchEvent(new Event('openBookingModal'))} className="px-6 py-2.5 bg-white text-black font-semibold uppercase tracking-widest text-xs rounded-full hover:bg-[var(--color-accent)] hover:scale-105 transition-all duration-300">
                     Book Now
-                </a>
+                </button>
             </div>
         </motion.nav>
     );

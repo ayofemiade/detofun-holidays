@@ -10,6 +10,7 @@ import Testimonials from "@/sections/Testimonials";
 import FinalCTA from "@/sections/FinalCTA";
 import ContactSection from "@/sections/ContactSection";
 import Navbar from "@/components/Navbar";
+import BookingModal from "@/components/BookingModal";
 
 export default function Home() {
   return (
@@ -26,6 +27,7 @@ export default function Home() {
       <Testimonials />
       <FinalCTA />
       <ContactSection />
+      <BookingModal />
     </main>
   );
 }

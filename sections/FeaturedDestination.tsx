@@ -70,15 +70,16 @@ export default function FeaturedDestination() {
                     Discover a city built on ancient rocks and deep resilience. Abeokuta offers breathtaking views, rich history, and a vibrant culture that echoes through its vibrant markets and legendary hills.
                 </p>
 
-                <motion.button
+                <motion.a
+                    href="#experience"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.8 }}
                     viewport={{ once: true }}
-                    className="px-10 py-5 bg-white text-black font-semibold rounded-full hover:bg-[var(--color-accent)] hover:text-black transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] text-lg"
+                    className="px-10 py-5 bg-white text-black font-semibold rounded-full hover:bg-[var(--color-accent)] hover:text-black transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.2)] text-lg inline-block"
                 >
                     Explore Abeokuta
-                </motion.button>
+                </motion.a>
             </motion.div>
         </section>
     );

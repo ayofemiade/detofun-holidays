@@ -7,7 +7,7 @@ import AnimatedText from "@/components/AnimatedText";
 const packages = [
     {
         title: "Abeokuta Day Tour",
-        price: "₦50,000",
+        price: "Starting from ₦100,000",
         duration: "1 Day",
         popular: false,
         features: [
@@ -19,21 +19,49 @@ const packages = [
         icon: Compass,
     },
     {
-        title: "Ogun Heritage Exp.",
-        price: "₦120,000",
-        duration: "2 Days / 1 Night",
+        title: "School Excursion",
+        price: "On Request",
+        duration: "Flexible",
+        popular: false,
+        features: [
+            "Educational heritage walk",
+            "Safe group transportation",
+            "Obasanjo Library tour",
+            "Dedicated group guides",
+            "All-inclusive planning",
+        ],
+        icon: Users,
+    },
+    {
+        title: "Corporate Retreat",
+        price: "On Request",
+        duration: "Flexible",
         popular: true,
         features: [
-            "Everything in Day Tour",
-            "Obasanjo Library access",
-            "Premium hotel stay",
-            "Evening cultural show",
-            "All meals included",
+            "Team building activities",
+            "Executive transportation",
+            "Premium accommodations",
+            "Evening cultural shows",
+            "Dedicated concierge",
         ],
         icon: CalendarDays,
     },
     {
-        title: "Custom Packages",
+        title: "International Visitor",
+        price: "On Request",
+        duration: "Flexible",
+        popular: false,
+        features: [
+            "VIP airport pickup",
+            "Private security detail",
+            "Luxury lodging",
+            "Exclusive access tours",
+            "Translator availability",
+        ],
+        icon: Compass,
+    },
+    {
+        title: "Custom Package",
         price: "Custom",
         duration: "Flexible",
         popular: false,
@@ -90,8 +118,8 @@ export default function TourPackages() {
 
                             <h3 className="text-2xl font-heading font-bold text-white mb-2">{pkg.title}</h3>
                             <div className="flex items-baseline justify-center gap-1 mb-6">
-                                <span className="text-4xl font-bold text-[var(--color-accent)]">{pkg.price}</span>
-                                {pkg.price !== "Custom" && <span className="text-white/60">/person</span>}
+                                <span className="text-2xl md:text-3xl font-bold text-[var(--color-accent)]">{pkg.price}</span>
+                                {pkg.price.includes('₦') && <span className="text-white/60">/person</span>}
                             </div>
 
                             <p className="text-[var(--color-secondary)]/80 mb-8 border-b border-white/10 pb-8 w-full">
@@ -107,12 +135,12 @@ export default function TourPackages() {
                                 ))}
                             </ul>
 
-                            <a href="#contact" className={`mt-auto w-full py-4 rounded-full font-bold transition-all duration-300 flex justify-center text-center ${pkg.popular
+                            <button onClick={() => window.dispatchEvent(new Event('openBookingModal'))} className={`mt-auto w-full py-4 rounded-full font-bold transition-all duration-300 flex justify-center text-center ${pkg.popular
                                     ? "bg-[var(--color-accent)] text-black hover:bg-white"
                                     : "bg-white/10 text-white hover:bg-white hover:text-black"
                                 }`}>
                                 Book Now
-                            </a>
+                            </button>
                         </motion.div>
                     ))}
                 </div>

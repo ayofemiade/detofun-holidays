@@ -22,23 +22,23 @@ export default function ContactSection() {
                     </p>
 
                     <div className="space-y-8">
-                        <div className="flex items-center gap-6 group cursor-pointer">
+                        <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href='tel:08084586992'}>
                             <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center border border-white/10 group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] transition-all duration-300">
                                 <Phone className="w-6 h-6 text-white group-hover:text-black transition-colors" />
                             </div>
                             <div>
                                 <p className="text-[var(--color-secondary)]/60 text-sm uppercase tracking-wider mb-1">Phone</p>
-                                <p className="text-xl font-medium">+234 (0) 800 DETOFUN</p>
+                                <p className="text-xl font-medium">08084586992</p>
                             </div>
                         </div>
 
-                        <div className="flex items-center gap-6 group cursor-pointer">
+                        <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href='mailto:detofunltd@gmail.com'}>
                             <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center border border-white/10 group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] transition-all duration-300">
                                 <Mail className="w-6 h-6 text-white group-hover:text-black transition-colors" />
                             </div>
                             <div>
                                 <p className="text-[var(--color-secondary)]/60 text-sm uppercase tracking-wider mb-1">Email</p>
-                                <p className="text-xl font-medium">hello@detofunholidays.com</p>
+                                <p className="text-xl font-medium">detofunltd@gmail.com</p>
                             </div>
                         </div>
 
@@ -62,47 +62,55 @@ export default function ContactSection() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="bg-black/50 backdrop-blur-md p-8 md:p-12 rounded-3xl border border-white/10"
                 >
-                    <form className="flex flex-col gap-6" onSubmit={(e: any) => e.preventDefault()}>
+                    <form className="flex flex-col gap-6" onSubmit={(e: any) => {
+                        e.preventDefault();
+                        const formData = new FormData(e.target);
+                        const text = `Hello Detofun Holidays!%0A%0A*New General Inquiry:*%0A- *Name:* ${formData.get('name')}%0A- *Guests:* ${formData.get('guests')}%0A- *Destination:* ${formData.get('destination')}%0A- *Date:* ${formData.get('date')}%0A- *Special Requests:* ${formData.get('requests')}`;
+                        window.open(`https://wa.me/2348084586992?text=${text}`, '_blank');
+                        e.target.reset();
+                    }}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Name</label>
-                                <input type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John Doe" />
+                                <input name="name" required type="text" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="John Doe" />
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Guests</label>
-                                <input type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="2" />
+                                <input name="guests" type="number" min="1" className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors" placeholder="2" />
                             </div>
                         </div>
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Destination</label>
-                                <select className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none">
+                                <select name="destination" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors appearance-none">
                                     <option>Abeokuta Tour</option>
-                                    <option>Ogun Heritage</option>
+                                    <option>School Excursion</option>
+                                    <option>Corporate Retreat</option>
+                                    <option>International Visitor</option>
                                     <option>Custom Package</option>
                                 </select>
                             </div>
                             <div className="flex flex-col gap-2">
                                 <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Date</label>
-                                <input type="date" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors [color-scheme:dark]" />
+                                <input name="date" type="date" className="w-full bg-[#1A1A1A] border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors [color-scheme:dark]" />
                             </div>
                         </div>
 
                         <div className="flex flex-col gap-2">
                             <label className="text-sm text-[var(--color-secondary)]/60 uppercase tracking-widest pl-2">Special Requests</label>
-                            <textarea rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none" placeholder="Tell us how we can make your trip perfect..."></textarea>
+                            <textarea name="requests" rows={4} className="w-full bg-white/5 border border-white/10 rounded-xl px-6 py-4 text-white focus:outline-none focus:border-[var(--color-accent)] transition-colors resize-none" placeholder="Tell us how we can make your trip perfect..."></textarea>
                         </div>
 
-                        <button className="w-full py-5 bg-[var(--color-accent)] text-black font-bold text-lg rounded-xl hover:bg-white hover:scale-[1.02] transition-all duration-300 shadow-lg mt-4">
-                            Send Inquiry
+                        <button type="submit" className="w-full py-5 bg-[var(--color-accent)] text-black font-bold text-lg rounded-xl hover:bg-white hover:scale-[1.02] transition-all duration-300 shadow-lg mt-4">
+                            Send Inquiry Via WhatsApp
                         </button>
                     </form>
                 </motion.div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 mt-32 text-center text-[var(--color-secondary)]/40 text-sm">
-                <p>© {new Date().getFullYear()} DETOFUN HOLIDAYS. All Rights Reserved.</p>
+                <p suppressHydrationWarning>© {new Date().getFullYear()} DETOFUN HOLIDAYS. All Rights Reserved.</p>
                 <p className="mt-2">Designed as a High-End Cinematic Web Experience.</p>
             </div>
         </section>

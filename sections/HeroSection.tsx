@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useScroll, useTransform, useReducedMotion, Variants } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronDown, ArrowRight } from "lucide-react";
 // Static import → Next.js auto-generates blurDataURL at build time
@@ -148,18 +148,18 @@ function CTARow() {
       </motion.a>
 
       {/* Secondary */}
-      <motion.a
-        href="#contact"
+      <motion.button
+        onClick={() => window.dispatchEvent(new Event('openBookingModal'))}
         whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         className="group relative overflow-hidden px-9 py-4 rounded-full font-bold text-sm uppercase tracking-widest cursor-pointer flex items-center justify-center gap-3 border transition-all duration-300 w-full sm:w-auto"
         style={{ borderColor: GOLD, color: GOLD, backgroundColor: "transparent" }}
       >
         <span className="pointer-events-none absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ backgroundColor: GOLD }} />
-        <span className="relative z-10 transition-colors duration-300" style={{ color: "inherit" }}>
+        <span className="relative z-10 transition-colors duration-300 group-hover:text-[#2C1A0B]" style={{ color: "inherit" }}>
           Book a Tour
         </span>
-      </motion.a>
+      </motion.button>
     </motion.div>
   );
 }
@@ -240,10 +240,14 @@ function ScrollIndicator() {
   );
 }
 
-// ─── Main export ──────────────────────────────────────────────────────────────
 export default function HeroSection() {
   const ref = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion() ?? false;
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Parallax: image moves at 0.4× scroll speed
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -251,6 +255,8 @@ export default function HeroSection() {
 
   // Fade out content on scroll
   const contentOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  const showReduced = mounted && reduced;
 
   return (
     <section
@@ -262,7 +268,7 @@ export default function HeroSection() {
       {/* ── Background: Ken Burns (CSS) + Scroll Parallax (Framer) ── */}
       <motion.div
         className="absolute inset-0 w-full h-full will-change-transform"
-        style={{ y: reduced ? "0%" : bgY }}
+        style={{ y: showReduced ? "0%" : bgY, opacity: mounted ? (mounted && reduced ? 1 : 1) : 1 }}
       >
         {/*
           Ken Burns: pure CSS keyframe — runs on the GPU compositor,

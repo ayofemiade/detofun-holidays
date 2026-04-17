@@ -37,6 +37,7 @@ export default function ExperienceScroll() {
 
     return (
         <>
+        <div id="experience">
             {/* Desktop Version */}
             <section ref={containerRef} className="hidden md:block relative bg-[#120B05]" style={{ height: "400vh" }}>
                 {/* Sticky Container */}
@@ -134,6 +135,7 @@ export default function ExperienceScroll() {
                     </div>
                 ))}
             </section>
+        </div>
         </>
     );
 }

@@ -80,7 +80,7 @@ function InteractiveCard({ card, index }: { card: typeof cards[0]; index: number
 
 export default function WhyChooseUs() {
     return (
-        <section className="relative w-full py-32 px-4 bg-black overflow-hidden flex flex-col items-center">
+        <section id="difference" className="relative w-full py-32 px-4 bg-black overflow-hidden flex flex-col items-center">
             {/* Background ambient light */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-[var(--color-primary)] opacity-30 blur-[120px] rounded-full pointer-events-none" />
 
