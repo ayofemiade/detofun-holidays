@@ -43,9 +43,9 @@ export default function ExperienceScroll() {
                 {/* Sticky Container */}
                 <div className="sticky top-0 h-screen w-full overflow-hidden bg-black flex items-center">
 
-                    <motion.div style={{ x }} className="flex h-full w-[300vw]">
+                    <motion.div style={{ x }} className="flex h-full w-[300%]">
                         {experiences.map((exp, index) => (
-                            <div key={exp.id} className="relative w-screen h-full flex items-center justify-center overflow-hidden shrink-0">
+                            <div key={exp.id} className="relative w-full h-full flex items-center justify-center overflow-hidden shrink-0">
 
                                 {/* Background Image Layer with Parallax Effect */}
                                 <div className="absolute inset-0 w-full h-full">

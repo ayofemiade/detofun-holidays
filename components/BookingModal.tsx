@@ -44,7 +44,7 @@ export default function BookingModal() {
         e.preventDefault(); 
         const formData = new FormData(e.currentTarget);
         const text = `Hello Detofun Holidays!%0A%0A*New Booking Request:*%0A- *Name:* ${formData.get('name')}%0A- *Email:* ${formData.get('email')}%0A- *Phone:* ${formData.get('phone')}%0A- *Guests:* ${formData.get('guests')}%0A- *Destination:* ${formData.get('destination')}%0A- *Date:* ${formData.get('date')}%0A- *Special Requests:* ${formData.get('requirements')}`;
-        window.open(`https://wa.me/2348084586992?text=${text}`, '_blank');
+        window.open(`https://wa.me/2348033975840?text=${text}`, '_blank');
         e.currentTarget.reset();
         setIsOpen(false);
     };

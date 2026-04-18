@@ -41,7 +41,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${playfair.variable} ${inter.variable} ${cormorant.variable} ${outfit.variable} h-full antialiased`}
+      className={`${playfair.variable} ${inter.variable} ${cormorant.variable} ${outfit.variable} h-full antialiased overflow-x-clip`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col font-body bg-[var(--color-background)] text-[var(--color-foreground)] overflow-x-clip selection:bg-amber-700/50 selection:text-white">
         <SmoothScrollProvider>

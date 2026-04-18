@@ -22,13 +22,13 @@ export default function ContactSection() {
                     </p>
 
                     <div className="space-y-8">
-                        <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href='tel:08084586992'}>
+                        <div className="flex items-center gap-6 group cursor-pointer" onClick={() => window.location.href='tel:08033975840'}>
                             <div className="w-14 h-14 rounded-full bg-[var(--color-primary)] flex items-center justify-center border border-white/10 group-hover:bg-[var(--color-accent)] group-hover:border-[var(--color-accent)] transition-all duration-300">
                                 <Phone className="w-6 h-6 text-white group-hover:text-black transition-colors" />
                             </div>
                             <div>
                                 <p className="text-[var(--color-secondary)]/60 text-sm uppercase tracking-wider mb-1">Phone</p>
-                                <p className="text-xl font-medium">08084586992</p>
+                                <p className="text-xl font-medium">08033975840</p>
                             </div>
                         </div>
 
@@ -66,7 +66,7 @@ export default function ContactSection() {
                         e.preventDefault();
                         const formData = new FormData(e.target);
                         const text = `Hello Detofun Holidays!%0A%0A*New General Inquiry:*%0A- *Name:* ${formData.get('name')}%0A- *Email:* ${formData.get('email')}%0A- *Phone:* ${formData.get('phone')}%0A- *Guests:* ${formData.get('guests')}%0A- *Destination:* ${formData.get('destination')}%0A- *Date:* ${formData.get('date')}%0A- *Special Requests:* ${formData.get('requests')}`;
-                        window.open(`https://wa.me/2348084586992?text=${text}`, '_blank');
+                        window.open(`https://wa.me/2348033975840?text=${text}`, '_blank');
                         e.target.reset();
                     }}>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
